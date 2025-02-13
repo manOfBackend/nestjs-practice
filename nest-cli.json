@@ -30,6 +30,15 @@
         "tsConfigPath": "apps/built-in-bodyparser/tsconfig.app.json"
       }
     },
+    "cache-middleware": {
+      "type": "application",
+      "root": "apps/cache-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/cache-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cache-middleware/tsconfig.app.json"
+      }
+    },
     "di-middleware": {
       "type": "application",
       "root": "apps/di-middleware",
