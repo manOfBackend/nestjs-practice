@@ -7,17 +7,32 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/apps/nestjs-practice/main",
+    "start:basic": "nest start --project basic-middleware",
+    "start:di": "nest start --project di-middleware",
+    "start:route-specific": "nest start --project route-specific",
+    "start:exclude": "nest start --project exclude-middleware",
+    "start:functional": "nest start --project functional-middleware",
+    "start:multiple": "nest start --project multiple-middleware",
+    "start:global": "nest start --project global-middleware",
+    "start:async": "nest start --project async-middleware",
+    "start:wildcard": "nest start --project wildcard-middleware",
+    "start:bodyparser": "nest start --project built-in-bodyparser",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/nestjs-practice/test/jest-e2e.json",
+    "test:basic": "jest --config apps/basic-middleware/jest.config.js",
+    "test:di": "jest --config apps/di-middleware/jest.config.js",
+    "test:route-specific": "jest --config apps/route-specific/jest.config.js",
+    "test:exclude": "jest --config apps/exclude-middleware/jest.config.js",
+    "test:functional": "jest --config apps/functional-middleware/jest.config.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -31,7 +46,7 @@
     "@eslint/js": "^9.18.0",
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
-    "@nestjs/testing": "^11.0.1",
+    "@nestjs/testing": "^11.0.9",
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.10.7",
     "@types/express": "^5.0.0",
@@ -59,7 +74,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -67,7 +82,10 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/apps/"
+    ]
   }
 }

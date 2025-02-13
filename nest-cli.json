@@ -1,8 +1,97 @@
 {
-  "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
-  "compilerOptions": {
-    "deleteOutDir": true
+  "sourceRoot": "packages",
+  "monorepo": true,
+  "projects": {
+    "async-middleware": {
+      "type": "application",
+      "root": "apps/async-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/async-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/async-middleware/tsconfig.app.json"
+      }
+    },
+    "basic-middleware": {
+      "type": "application",
+      "root": "apps/basic-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/basic-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/basic-middleware/tsconfig.app.json"
+      }
+    },
+    "built-in-bodyparser": {
+      "type": "application",
+      "root": "apps/built-in-bodyparser",
+      "entryFile": "main",
+      "sourceRoot": "apps/built-in-bodyparser/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/built-in-bodyparser/tsconfig.app.json"
+      }
+    },
+    "di-middleware": {
+      "type": "application",
+      "root": "apps/di-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/di-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/di-middleware/tsconfig.app.json"
+      }
+    },
+    "exclude-middleware": {
+      "type": "application",
+      "root": "apps/exclude-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/exclude-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/exclude-middleware/tsconfig.app.json"
+      }
+    },
+    "functional-middleware": {
+      "type": "application",
+      "root": "apps/functional-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/functional-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/functional-middleware/tsconfig.app.json"
+      }
+    },
+    "global-middleware": {
+      "type": "application",
+      "root": "apps/global-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/global-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/global-middleware/tsconfig.app.json"
+      }
+    },
+    "multiple-middleware": {
+      "type": "application",
+      "root": "apps/multiple-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/multiple-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/multiple-middleware/tsconfig.app.json"
+      }
+    },
+    "route-specific": {
+      "type": "application",
+      "root": "apps/route-specific",
+      "entryFile": "main",
+      "sourceRoot": "apps/route-specific/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/route-specific/tsconfig.app.json"
+      }
+    },
+    "wildcard-middleware": {
+      "type": "application",
+      "root": "apps/wildcard-middleware",
+      "entryFile": "main",
+      "sourceRoot": "apps/wildcard-middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wildcard-middleware/tsconfig.app.json"
+      }
+    }
   }
 }
