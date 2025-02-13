@@ -1,10 +1,21 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { WildcardMiddlewareController } from './wildcard-middleware.controller';
 import { WildcardMiddlewareService } from './wildcard-middleware.service';
+import { AdminController } from './admin.controller';
+import { WildcardMiddleware } from './wildcard.middleware';
 
 @Module({
   imports: [],
-  controllers: [WildcardMiddlewareController],
+  controllers: [WildcardMiddlewareController, AdminController],
   providers: [WildcardMiddlewareService],
 })
-export class WildcardMiddlewareModule {}
+export class WildcardMiddlewareModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(WildcardMiddleware)
+      .forRoutes(
+        { path: 'admin', method: RequestMethod.ALL },
+        { path: 'admin/*', method: RequestMethod.ALL },
+      );
+  }
+}
