@@ -39,6 +39,15 @@
         "tsConfigPath": "apps/cache-middleware/tsconfig.app.json"
       }
     },
+    "custom-error-handling": {
+      "type": "application",
+      "root": "apps/custom-error-handling",
+      "entryFile": "main",
+      "sourceRoot": "apps/custom-error-handling/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/custom-error-handling/tsconfig.app.json"
+      }
+    },
     "di-middleware": {
       "type": "application",
       "root": "apps/di-middleware",
