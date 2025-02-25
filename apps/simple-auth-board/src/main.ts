@@ -1,6 +1,6 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import { ValidationPipe } from '@nestjs/common';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 import { SimpleAuthBoardModule } from './simple-auth-board.module';
 
@@ -10,6 +10,12 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
+  const fastifyInstance = app.getHttpAdapter().getInstance();
+  fastifyInstance.addHook('onRequest', (req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    next();
+  });
+
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   app.useGlobalFilters(new AllExceptionsFilter());
@@ -17,4 +23,5 @@ async function bootstrap() {
   await app.listen(3000);
   console.log(`Application is running on: http://localhost:3000`);
 }
+
 bootstrap();
