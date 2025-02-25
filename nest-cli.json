@@ -66,6 +66,15 @@
         "tsConfigPath": "apps/exclude-middleware/tsconfig.app.json"
       }
     },
+    "fastify-simple-board": {
+      "type": "application",
+      "root": "apps/fastify-simple-board",
+      "entryFile": "main",
+      "sourceRoot": "apps/fastify-simple-board/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/fastify-simple-board/tsconfig.app.json"
+      }
+    },
     "functional-middleware": {
       "type": "application",
       "root": "apps/functional-middleware",
