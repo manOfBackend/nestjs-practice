@@ -111,6 +111,15 @@
         "tsConfigPath": "apps/route-specific/tsconfig.app.json"
       }
     },
+    "simple-auth-board": {
+      "type": "application",
+      "root": "apps/simple-auth-board",
+      "entryFile": "main",
+      "sourceRoot": "apps/simple-auth-board/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/simple-auth-board/tsconfig.app.json"
+      }
+    },
     "wildcard-middleware": {
       "type": "application",
       "root": "apps/wildcard-middleware",
