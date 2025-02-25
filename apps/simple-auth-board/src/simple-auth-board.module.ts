@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { SimpleAuthBoardController } from './simple-auth-board.controller';
-import { SimpleAuthBoardService } from './simple-auth-board.service';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [],
-  controllers: [SimpleAuthBoardController],
-  providers: [SimpleAuthBoardService],
+  imports: [AuthModule, UsersModule],
 })
 export class SimpleAuthBoardModule {}
