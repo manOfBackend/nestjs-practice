@@ -15,6 +15,9 @@ export class RolesGuard implements CanActivate {
     const request = context.switchToHttp().getRequest<FastifyRequest>();
     const user = (request as any)['user'];
 
+    console.log('user', user);
+    console.log('requiredRoles', requiredRoles);
+
     if (!user || !requiredRoles.includes(user.role)) {
       throw new ForbiddenException('접근 권한이 없습니다.');
     }
